@@ -1,3 +1,4 @@
+<img width="1382" height="812" alt="2026-05-05_00h52_51" src="https://github.com/user-attachments/assets/d2df1745-ce50-451e-98a9-91686b742005" />
 Rôle des fichiers
 YT2MP3.py
 

@@ -1,4 +1,53 @@
 <img width="1382" height="812" alt="2026-05-05_00h52_51" src="https://github.com/user-attachments/assets/d2df1745-ce50-451e-98a9-91686b742005" />
+
+# YT2MP3 - Téléchargeur MP3 avec interface graphique
+
+YT2MP3 est une application Python multi-OS avec interface graphique permettant de télécharger l’audio de vidéos YouTube au format MP3.
+
+L’application propose une file d’attente, l’affichage des miniatures, l’intégration des jaquettes MP3, les métadonnées audio, ainsi que des options de pause, d’annulation et de reprise.
+
+## Compatibilité
+
+YT2MP3 est compatible avec :
+
+- Windows 10 / 11
+- Linux
+- macOS
+
+L’application utilise :
+
+- `Tkinter` pour l’interface graphique ;
+- `yt-dlp` pour l’extraction et le téléchargement audio ;
+- `FFmpeg` pour la conversion MP3 ;
+- `Pillow` pour l’affichage des miniatures ;
+- `mutagen` pour l’intégration des jaquettes et métadonnées.
+
+## Fonctionnalités
+
+- Ajouter une URL YouTube manuellement.
+- Charger un fichier `.txt` contenant plusieurs URLs.
+- Afficher une file d’attente des vidéos à télécharger.
+- Afficher le titre, la durée, le statut et la progression.
+- Prévisualiser la miniature de la vidéo sélectionnée.
+- Intégrer la miniature YouTube comme jaquette du fichier MP3.
+- Ajouter les métadonnées audio au fichier final.
+- Choisir la qualité MP3 : 128, 192, 256 ou 320 kbps.
+- Mettre en pause ou reprendre le téléchargement.
+- Annuler une vidéo spécifique ou toute la file.
+- Réessayer les vidéos en erreur ou annulées.
+- Supprimer les vidéos terminées ou annulées de la file.
+- Détecter automatiquement FFmpeg.
+- Installer FFmpeg depuis l’interface sur Windows si `winget` est disponible.
+- Afficher une aide intégrée avec les commandes utiles.
+
+## Structure du projet
+
+```text
+YT2MP3/
+├── mp3/
+├── README.md
+├── requirements.txt
+└── YT2MP3.py
 Rôle des fichiers
 YT2MP3.py
 
@@ -12,7 +61,7 @@ l’ajout d’URLs individuelles ;
 le chargement d’un fichier .txt ;
 la récupération des métadonnées vidéo ;
 l’affichage des miniatures ;
-le téléchargement audio via yt-dlp;
+le téléchargement audio via yt-dlp ;
 la conversion en MP3 via FFmpeg ;
 l’intégration des jaquettes et métadonnées ;
 la gestion des erreurs, annulations et reprises ;
@@ -38,13 +87,60 @@ l’utilisation ;
 les commandes utiles ;
 les erreurs fréquentes ;
 le fonctionnement général de l’application.
+mp3/
 
-Prérequis :
+Dossier de sortie par défaut.
 
+Il contient les fichiers MP3 générés par l’application.
+
+Prérequis
 Python 3.10 ou supérieur
 FFmpeg
 Une connexion Internet
+Installation de Python
+Windows
 
+Avec winget :
+
+winget install Python.Python.3.12
+
+Vérifier l’installation :
+
+python --version
+pip --version
+Linux
+
+Debian / Ubuntu :
+
+sudo apt update
+sudo apt install python3 python3-pip python3-tk
+
+Vérifier l’installation :
+
+python3 --version
+pip3 --version
+macOS
+
+Avec Homebrew :
+
+brew install python
+
+Vérifier l’installation :
+
+python3 --version
+pip3 --version
+
+Tkinter est généralement inclus avec Python sur macOS. Si l’interface ne se lance pas, installer une version de Python incluant Tkinter ou utiliser Python depuis le site officiel.
+
+Installation depuis GitHub
+
+Cloner le dépôt :
+
+git clone https://github.com/ThreadRam/YT2MP3.git
+
+Entrer dans le dossier :
+
+cd YT2MP3
 Installation des dépendances Python
 
 Depuis le dossier du projet :
@@ -155,9 +251,9 @@ Dans l’application, renseigner uniquement :
 /usr/local/bin
 Lancement de l’application
 Windows
-python YT2MP3.py OU py YT2MP3.py
+python YT2MP3.py
 Linux / macOS
-python3 YT2MP3.py.py
+python3 YT2MP3.py
 Utilisation
 Ajouter une seule vidéo
 Copier une URL YouTube.
@@ -210,7 +306,7 @@ Intégrer la miniature comme jaquette MP3
 
 Télécharge la miniature YouTube et l’intègre dans le fichier MP3 final.
 
-Cette jaquette est visible dans les lecteurs compatibles comme VLC, MusicBee, Windows Media Player, Plex ou autres lecteurs audio prenant en charge les jaquettes intégrées.
+Cette jaquette est visible dans les lecteurs compatibles comme VLC, MusicBee, Windows Media Player, Plex ou tout autre lecteur audio prenant en charge les jaquettes intégrées.
 
 Ajouter les métadonnées audio
 
@@ -225,9 +321,9 @@ Supprimer les fichiers temporaires
 
 Supprime les fichiers intermédiaires après conversion :
 
-.webm
-.m4a
-miniatures temporaires
+.webm ;
+.m4a ;
+miniatures temporaires.
 Rôle des principales fonctions du script
 ensure_package()
 
@@ -393,11 +489,11 @@ Commandes développeur
 
 Cloner le dépôt :
 
-git clone https://github.com/TON-USER/TON-REPO.git
+git clone https://github.com/ThreadRam/YT2MP3.git
 
 Entrer dans le dossier :
 
-cd TON-REPO
+cd YT2MP3
 
 Créer un environnement virtuel :
 
@@ -418,9 +514,9 @@ python3 -m pip install -r requirements.txt
 Lancer l’application :
 
 Windows
-python mp3_gui_queue.py
+python YT2MP3.py
 Linux / macOS
-python3 mp3_gui_queue.py
+python3 YT2MP3.py
 Bonnes pratiques
 Utiliser un dossier de sortie dédié.
 Vérifier la file avant de démarrer le téléchargement.

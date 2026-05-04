@@ -1,5 +1,5 @@
 Rôle des fichiers
-main.py
+YT2MP3.py
 
 Script principal de l’application.
 
@@ -154,9 +154,9 @@ Dans l’application, renseigner uniquement :
 /usr/local/bin
 Lancement de l’application
 Windows
-python mp3_gui_queue.py
+python YT2MP3.py OU py YT2MP3.py
 Linux / macOS
-python3 mp3_gui_queue.py
+python3 YT2MP3.py.py
 Utilisation
 Ajouter une seule vidéo
 Copier une URL YouTube.
